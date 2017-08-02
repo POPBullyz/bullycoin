@@ -957,7 +957,7 @@ public:
     // ppcoin: entropy bit for stake modifier if chosen by modifier
     unsigned int GetStakeEntropyBit(unsigned int nHeight) const
     {
-        // Protocol switch to support p2pool at LUNA block #0
+        // Protocol switch to support p2pool at BULLY block #0
         if (nHeight >= 0 || fTestNet)
         {
             // Take last bit of block hash as entropy bit
@@ -967,7 +967,7 @@ public:
             return nEntropyBit;
         }
 
-        // Before LUNA block #0 - get from pregenerated table
+        // Before BULLY block #0 - get from pregenerated table
         int nBitNum = nHeight & 0xFF;
         int nItemNum = nHeight / 0xFF;
 

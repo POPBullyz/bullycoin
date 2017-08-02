@@ -1,9 +1,9 @@
-Building LUNA
+Building BULLY
 
-See doc/readme-qt.rst for instructions on building LUNA Qt,
+See doc/readme-qt.rst for instructions on building BULLY Qt,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of LUNA.
+implementation of BULLY.
 
-See doc/build-*.txt for instructions on building LUNAd,
+See doc/build-*.txt for instructions on building BULLYd,
 the intended-for-services, no-graphical-interface, reference
-implementation of LUNA.
+implementation of BULLY.

@@ -8,7 +8,7 @@
 // Name of client reported in the 'version' message. Report the same name
 // for both bitcoind and bitcoin-qt, to make it harder for attackers to
 // target servers or GUI users specifically.
-const std::string CLIENT_NAME("LUNA");
+const std::string CLIENT_NAME("BULLY");
 
 // Client version number
 #ifdef USE_LEVELDB
@@ -63,10 +63,10 @@ const std::string CLIENT_NAME("LUNA");
 #endif
 
 #define BUILD_DESC_FROM_COMMIT(maj,min,rev,commit) \
-    "LUNA-v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-g" commit
+    "BULLY-v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-g" commit
 
 #define BUILD_DESC_FROM_UNKNOWN(maj,min,rev) \
-    "LUNA-v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-unk"
+    "BULLY-v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev) "." DO_STRINGIZE(build) "-unk"
 
 #ifndef BUILD_DESC
 #    ifdef GIT_COMMIT_ID

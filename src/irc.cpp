@@ -190,7 +190,7 @@ bool GetIPFromIRC(SOCKET hSocket, string strMyName, CNetAddr& ipRet)
 void ThreadIRCSeed(void* parg)
 {
     // Make this thread recognisable as the IRC seeding thread
-    RenameThread("LUNA-ircseed");
+    RenameThread("BULLY-ircseed");
 
     printf("ThreadIRCSeed started\n");
 
@@ -307,16 +307,16 @@ void ThreadIRCSeed2(void* parg)
         }
 
         if (fTestNet) {
-            Send(hSocket, "JOIN #LUNATEST2\r");
-            Send(hSocket, "WHO #LUNATEST2\r");
+            Send(hSocket, "JOIN #BULLYTEST2\r");
+            Send(hSocket, "WHO #BULLYTEST2\r");
         } else {
-            // randomly join #LUNA00-#LUNA05
+            // randomly join #BULLY00-#BULLY05
             // int channel_number = GetRandInt(5);
 
             // Channel number is always 0 for initial release
             int channel_number = 0;
-            Send(hSocket, strprintf("JOIN #LUNA%02d\r", channel_number).c_str());
-            Send(hSocket, strprintf("WHO #LUNA%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("JOIN #BULLY%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("WHO #BULLY%02d\r", channel_number).c_str());
         }
 
         int64_t nStart = GetTime();

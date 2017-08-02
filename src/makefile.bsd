@@ -137,7 +137,7 @@ OBJS= \
     obj/kernel.o \
     obj/kernel_worker.o
 
-all: LUNAd
+all: BULLYd
 
 #
 # LevelDB support
@@ -216,11 +216,11 @@ obj/%.o: %.cpp
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-LUNAd: $(OBJS:obj/%=obj/%)
+BULLYd: $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 clean:
-	-rm -f LUNAd
+	-rm -f BULLYd
 	-rm -f obj/*.o
 	-rm -f obj/*.P
 	-rm -f obj/*.d

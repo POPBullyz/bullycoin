@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2013 The LUNA developers
+// Copyright (c) 2013 The BULLY developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -658,7 +658,7 @@ void ThreadStakeMiner(void* parg)
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
 
     // Make this thread recognisable as the mining thread
-    RenameThread("LUNA-miner");
+    RenameThread("BULLY-miner");
     CWallet* pwallet = (CWallet*)parg;
 
     MidstateMap inputsMap;

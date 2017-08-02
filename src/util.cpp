@@ -1047,7 +1047,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "LUNA";
+    const char* pszModule = "BULLY";
 #endif
     if (pex)
         return strprintf(
@@ -1096,13 +1096,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\LUNA
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\LUNA
-    // Mac: ~/Library/Application Support/LUNA
-    // Unix: ~/.LUNA
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\BULLY
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\BULLY
+    // Mac: ~/Library/Application Support/BULLY
+    // Unix: ~/.BULLY
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "LUNA";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "BULLY";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1114,10 +1114,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "LUNA";
+    return pathRet / "BULLY";
 #else
     // Unix
-    return pathRet / ".LUNA";
+    return pathRet / ".BULLY";
 #endif
 #endif
 }
@@ -1192,7 +1192,7 @@ void createConf()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "LUNA.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "BULLY.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1228,7 +1228,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "LUNAd.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "BULLYd.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
@@ -1387,10 +1387,10 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong LUNA will not work properly.");
+                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong BULLY will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
-                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("LUNA"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
+                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("BULLY"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
                 }
             }
         }
